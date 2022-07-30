@@ -7,14 +7,24 @@ import getLocation from './call'
 export default function App() {
     const input = useRef()
     const [Info, setInfo] = useState({location:""});
-    const [handlePopup, sethandlePopup] = useState(false)
+    const mapRef = useRef()
+
+    let location = [51.505, -0.09];
 
     async function setLocation(){
         let locationT = await getLocation(input.current.value)
         console.log(locationT)
         setInfo(locationT);
-        sethandlePopup(!handlePopup)
+        handleOnFlyTo(locationT.location.lat , locationT.location.lng)
+
     }
+    function handleOnFlyTo(lat,lng){
+        mapRef.current.flyTo([lat,lng],14,{
+            duration:2
+        });
+        location = [lat,lng]
+    }
+
     return (
     <div className='container'>
         <nav>
@@ -42,22 +52,11 @@ export default function App() {
                 </div>
             </div>
         </nav>
-        <MapContainer center={[51.505, -0.09]} zoom={15} scrollWheelZoom={true}>
+        <MapContainer ref={mapRef} center={location} zoom={10} scrollWheelZoom={true}>
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            {handlePopup ? <Marker position={[Info.location.lat , Info.location.lng]}>
-                <Popup>
-                    Gotcha
-                </Popup>
-            </Marker> :
-            <Marker position={[20 , 20]}>
-                <Popup>
-                    It will look like this.
-                </Popup>
-            </Marker>
-            }
         </MapContainer>
     </div>
   )
