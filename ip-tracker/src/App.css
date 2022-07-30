@@ -1,0 +1,87 @@
+body{
+    overflow: hidden;
+    margin: auto;
+    padding: 0;
+}
+.leaflet-container{
+    width: 100vw;
+    height: 80vh;
+    z-index: 0;
+}
+nav{
+    z-index: 0;
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+
+    background-image: url('images/pattern-bg.png');
+    background-repeat:round;
+    width: 100vw;
+    height: 20vh;
+}
+h1{
+    color:  #fff;
+    font-family: Rubik;
+    font-size: 30px;
+}
+.input-control{
+    display: flex;
+    width: 20vw;
+    height: 5vh;
+    flex-direction: row;
+}
+.search-btn{
+    padding: 5px;
+    width: 3vw;
+    height: 5.1vh;
+    background-color: black;
+    border-radius: 0px 15px 15px 0px;
+    margin-left: auto;
+}
+nav input{
+    width: 100%;
+    height: 4.2vh;
+    padding: 5px;
+    border-radius: 15px 0px 0px 15px;
+    border-style: none;
+    outline: none;
+}
+nav input::placeholder{
+    color: hsl(0, 0%, 59%);
+    font-weight: 500;
+    font-size: 15px;
+    margin: auto;
+}
+nav div{
+    display: flex;
+    margin-top: 1%;
+    width: 70vw;
+    height: 12vh;
+    background-color: #fff;
+    z-index: 1;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 5px;
+}
+.tile{
+    display: grid;
+    border-radius: 0px;
+    border-right: solid 1px hsl(0, 0%, 59%);
+    padding: 1px;
+    height: 10vh;
+    margin: auto;
+    overflow: hidden;
+}
+.res-header{
+    color:  hsl(0, 0%, 59%);
+    font-size: small;
+    font-family: Rubik;
+    font-weight: 600;
+}
+.info{
+    font-family: Rubik;
+    color: black;
+    font-weight: 600;
+    font-size: larger;
+    margin-top: auto;
+}
