@@ -30,7 +30,7 @@ export default function App() {
         <nav>
             <h1>IP ADDRESS TRACKER</h1>
             <div className='input-control'>
-                <input ref={input} id='input' type='text' name='search' placeholder='Type IP or click the button to check your info'/>
+                <input type='number' ref={input} id='input' name='search' placeholder='Type IP or click the button to check your info'/>
                 <button onClick={setLocation} className='search-btn'><svg xmlns="http://www.w3.org/2000/svg" width="10" height="14"><path fill="none" stroke="#FFF" strokeWidth="3" d="M2 1l6 6-6 6"/></svg></button>
             </div>
             <div className='results'>

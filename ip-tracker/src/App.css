@@ -85,3 +85,25 @@ nav div{
     font-size: larger;
     margin-top: auto;
 }
+@media only screen and (max-width:600px) {
+    .input-control{
+        width: 40vw;
+        height: 10vh;
+    }
+    .search-btn{
+        width: 10vw;
+    }
+    .results{
+        display: grid;
+        width: 0vw;
+        height: 0vh;
+    }
+    .tile{
+        height: 10vh;
+        width: 40vw;
+        overflow: hidden;
+        border: none;
+        border-top: solid 1px hsl(0, 0%, 59%);
+        border-bottom: solid 1px hsl(0, 0%, 59%);
+    }
+}
